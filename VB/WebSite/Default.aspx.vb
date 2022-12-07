@@ -1,5 +1,5 @@
 ﻿Imports Microsoft.VisualBasic
-Imports DevExpress.Web.ASPxEditors
+Imports DevExpress.Web
 Imports System
 Imports System.Collections.Generic
 Imports System.Data
@@ -13,7 +13,7 @@ Partial Public Class _Default
 	Protected Sub Page_Init(ByVal sender As Object, ByVal e As EventArgs)
 		ASPxGridView1.JSProperties("cpVal") = InitAutoCompleteValues()
 	End Sub
-	Protected Sub ASPxGridView1_AutoFilterCellEditorInitialize(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxGridView.ASPxGridViewEditorEventArgs)
+	Protected Sub ASPxGridView1_AutoFilterCellEditorInitialize(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxGridViewEditorEventArgs)
 		If e.Column.FieldName = "CategoryName" Then
 			TryCast(e.Editor, ASPxTextBox).ClientSideEvents.Init = "OnTextBoxInit"
 		End If

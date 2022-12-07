@@ -1,4 +1,4 @@
-﻿using DevExpress.Web.ASPxEditors;
+﻿using DevExpress.Web;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,7 +13,7 @@ public partial class _Default : System.Web.UI.Page
     {
         ASPxGridView1.JSProperties["cpVal"] = InitAutoCompleteValues();       
     }
-    protected void ASPxGridView1_AutoFilterCellEditorInitialize(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewEditorEventArgs e)
+    protected void ASPxGridView1_AutoFilterCellEditorInitialize(object sender, DevExpress.Web.ASPxGridViewEditorEventArgs e)
     {
         if (e.Column.FieldName == "CategoryName")
             (e.Editor as ASPxTextBox).ClientSideEvents.Init = "OnTextBoxInit";
